@@ -251,7 +251,7 @@ const About = () => {
   "title": "Cybersecurity-Focused Software Engineer",
   "location": "Boston, MA",
   "website": "github.com/ame0101",
-  "email": "alfonsoa@bu.edu",
+  "email": "aalfonso0101@gmail.com",
   "about": "Cyber security-focused CS graduate specializing in AI-driven vulnerability detection, secure system design, and full-stack development, with proven expertise in hardening enterprise applications and deploying predictive analytics at scale.",
   "interests": [
     "AI-Driven Security",
