@@ -345,9 +345,51 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  // Projects data based on Amelia's resume
+
   useEffect(() => {
+    
     const projectsData = [
+
+      
+        {
+          id: 'sentinel-swarm',
+          title: 'Sentinel Swarm',
+          icon: '🛰️',
+          description:
+            'Geo-Swarm Defensive Orchestration with adaptive edge proxies for real-time threat mitigation across distributed environments.',
+          securityLevel: 5,
+          tags: ['Network Security', 'Zero-Trust', 'Threat Intel'],
+          links: {
+            github: 'https://sentinel-swarm.net',   // replace with repo URL if public
+            demo: 'https://sentinel-swarm.net/demo'
+          },
+          detail: {
+            fullDescription:
+              'Sentinel Swarm is a decentralized cybersecurity platform that fuses gossip-based intelligence sharing with a metamorphic edge proxy. ' +
+              'Agents exchange IOC hashes over mutual-TLS/WireGuard, rotate keys, randomize packet sizes and routes, and push WASM filters to Envoy sidecars, ' +
+              'shutting down attacks in ≤200 ms.',
+            features: [
+              'Gossip network with mutual-TLS & WireGuard',
+              'Edge proxy that continuously morphs TLS keys, packet sizes and paths',
+              'Push-pull anti-entropy for IOC synchronization',
+              'WASM filter injection into Envoy for on-the-fly blocking/throttling',
+              'Central control-plane hooks for Prometheus + SIEM alerts',
+              'Redundancy & fail-over for 99.99 % uptime'
+            ],
+            technologies: ['Go', 'Rust', 'Envoy-WASM', 'WireGuard', 'NATS', 'Kubernetes'],
+            codePreview: `// Simplified swarm-node gossip heartbeat
+      func (n *Node) gossipHeartbeat() {
+        tick := time.NewTicker(2 * time.Second)
+        for range tick.C {
+          peers := n.pickRandomPeers(3)
+          hb := heartbeat{NodeID: n.ID, IOCCount: len(n.IOCs), TS: time.Now()}
+          for _, p := range peers {
+            go n.send(p, hb) // non-blocking push-pull anti-entropy
+          }
+        }
+      }`
+          }
+        },
       {
         id: 'vulncrypt',
         title: 'VulnCrypt',
@@ -355,10 +397,7 @@ const Projects = () => {
         description: 'AI-powered static analysis tool using a custom LSTM-based RNN model to detect vulnerabilities in C source code.',
         securityLevel: 5,
         tags: ['AI', 'Static Analysis', 'Security Research'],
-        links: {
-          github: 'https://github.com/ame0101/vulncrypt',
-          demo: 'https://demo.vulncrypt.dev'
-        },
+       
         detail: {
           fullDescription: 'VulnCrypt is an AI-powered static analysis tool using a custom LSTM-based RNN model to detect vulnerabilities in C source code. The tool analyzes source code to identify potential security issues such as buffer overflows, SQL injection, and other common vulnerabilities.',
           features: [
@@ -436,10 +475,7 @@ class VulnDetector(nn.Module):
         description: 'Machine learning model that predicts shuttle delays with a Random Forest model, achieving R²=0.869 accuracy.',
         securityLevel: 3,
         tags: ['Machine Learning', 'Data Science', 'Transportation'],
-        links: {
-          github: 'https://github.com/ame0101/shuttle-predictor',
-          demo: 'https://demo.bu-shuttle-predictor.com'
-        },
+  
         detail: {
             fullDescription: 'The BU Shuttle Delay Predictor is a machine learning system that analyzes historical shuttle data to predict delays on Boston University\'s shuttle routes. Using a Random Forest model, it achieved an R² value of 0.869 and identified the most unreliable route with a 20.9-minute average delay.',          features: [
             'Random Forest model with R²=0.869 accuracy',
@@ -534,10 +570,7 @@ def analyze_routes(df):
         description: 'AI-powered network anomaly detection using LSTM models to detect malicious traffic patterns in real-time.',
         securityLevel: 5,
         tags: ['Network Security', 'AI', 'Threat Detection'],
-        links: {
-          github: 'https://github.com/ame0101/deeppacket',
-          demo: 'https://demo.deeppacket.io'
-        },
+   
         detail: {
           fullDescription: 'DeepPacket is an AI-powered network anomaly detection system that leverages LSTM models to detect malicious traffic patterns in real-time. The system analyzes packet captures (PCAPs) to identify suspicious activities such as DDoS attacks and DNS tunneling, achieving a 98% F1-score on the CIC-IDS2017 dataset.',
           features: [
@@ -645,10 +678,7 @@ class DeepPacketModel(nn.Module):
         description: 'Cloud Access Security Broker implementing zero-trust principles with JWT/OAuth 2.0 auth and DLP capabilities.',
         securityLevel: 4,
         tags: ['Cloud Security', 'Zero Trust', 'Access Control'],
-        links: {
-          github: 'https://github.com/ame0101/zero-trust-casb',
-          demo: 'https://demo.ztcasb.io'
-        },
+        
         detail: {
           fullDescription: 'The Zero Trust CASB (Cloud Access Security Broker) is a security solution implementing zero-trust principles for cloud service access. It features JWT/OAuth 2.0 authentication, least-privilege access controls, and HTTPS traffic inspection through a reverse proxy architecture for SaaS, PaaS, and IaaS platforms.',
           features: [
@@ -921,18 +951,19 @@ logAccessAttempt(logEntry) {
                     <Tag key={tag}>{tag}</Tag>
                   ))}
                 </TagContainer>
-                <ProjectLinks>
-                  <div>
-                    <ProjectLink to={project.links.github} target="_blank">
+
+
+                {project.links?.github && (
+                  <ProjectLinks>
+                    <ProjectLink
+                      to={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <span>GitHub</span>
                     </ProjectLink>
-                  </div>
-                  <div>
-                    <ProjectLink to={project.links.demo} target="_blank">
-                      <span>Live Demo</span>
-                    </ProjectLink>
-                  </div>
-                </ProjectLinks>
+                  </ProjectLinks>
+                )}
               </ProjectContent>
               <ProjectCardOverlay className="project-card-overlay">
                 <DetailsButton>View Details</DetailsButton>

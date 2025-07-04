@@ -209,8 +209,21 @@ const Tab = styled.button`
   }
 `;
 
-// Experience data for the timeline
+
 const experience = [
+    {
+    title: 'Founder & Chief Security Architect',
+    company: 'Sentinel Swarm (Startup)',
+    period: 'Jan 2019 – Present',
+    description:
+      'Built a decentralized Geo-Swarm Defensive Orchestration platform with a metamorphic edge proxy for real-time threat mitigation.',
+    responsibilities: [
+      'Designed gossip-based intel sharing over mutual TLS/WireGuard across 50+ swarm agents',
+      'Rolled out adaptive edge proxy that rotates keys, packet sizes and routes every 15 s',
+      'Achieved 99.99 % availability via active/passive fail-over and centralized Prometheus monitoring',
+      'Led a 4-person engineering pod; handled Go, Rust and Kubernetes implementations'
+    ]
+  },
   {
     title: "Software Engineer (Security Focus)",
     company: "Boston University",
@@ -277,8 +290,21 @@ const About = () => {
 }`
     },
     {
-      name: 'experience.json',
-      content: `[
+  name: 'experience.json',
+  content: `[
+  {
+    "title": "Founder & Chief Security Architect",
+    "company": "Sentinel Swarm",
+    "period": "Jan 2019 - Present",
+    "description": "Created a Geo-Swarm Defensive Orchestration platform with a metamorphic edge proxy for real-time threat response.",
+    "responsibilities": [
+      "Designed gossip-based intel exchange secured by mutual TLS/WireGuard",
+      "Implemented adaptive edge proxy rotating keys, packet sizes and routes",
+      "Maintained 99.99% uptime with redundant swarm agents and Prometheus alerts",
+      "Led a cross-functional team using Go, Rust and Kubernetes"
+    ],
+    "technologies": ["Go", "Rust", "WireGuard", "Envoy", "Kubernetes", "Prometheus"]
+  },
   {
     "title": "Software Engineer (Security Focus)",
     "company": "Boston University",

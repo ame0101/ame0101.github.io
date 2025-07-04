@@ -16,10 +16,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import ContactPage from './pages/ContactPage';
 import NotFound from './pages/NotFound';
 
-// Sentinel Swarm Pages
-import SentinelSwarmHome from './pages/SentinelSwarm/Home';
-import SentinelSwarmDashboard from './pages/SentinelSwarm/Dashboard';
-import SentinelSwarmAlerts from './pages/SentinelSwarm/Alerts';
+
 
 // Loading screen component
 import LoadingScreen from './components/ui/LoadingScreen';
@@ -51,11 +48,7 @@ const App = () => {
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/project/:id" element={<ProjectDetail />} />
               <Route path="/contact" element={<ContactPage />} />
-
-              {/* Sentinel Swarm Routes */}
-              <Route path="/sentinel-swarm" element={<SentinelSwarmHome />} />
-              <Route path="/sentinel-swarm/dashboard" element={<SentinelSwarmDashboard />} />
-              <Route path="/sentinel-swarm/alerts" element={<SentinelSwarmAlerts />} />
+              
 
               {/* Catch-all for undefined routes */}
               <Route path="*" element={<NotFound />} />

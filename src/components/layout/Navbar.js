@@ -246,9 +246,8 @@ const Navbar = () => {
           <NavLink to="/projects" active={isLinkActive('/projects')}>
             Projects
           </NavLink>
-          <NavLink to="/blog" active={isLinkActive('/blog')}>
-            Blog
-          </NavLink>
+  
+  
           <NavLink to="/contact" active={isLinkActive('/contact')}>
             Contact
           </NavLink>
@@ -284,9 +283,8 @@ const Navbar = () => {
             <MobileNavLink to="/projects" active={isLinkActive('/projects')}>
               Projects
             </MobileNavLink>
-            <MobileNavLink to="/blog" active={isLinkActive('/blog')}>
-              Blog
-            </MobileNavLink>
+      
+      
             <MobileNavLink to="/contact" active={isLinkActive('/contact')}>
               Contact
             </MobileNavLink>
