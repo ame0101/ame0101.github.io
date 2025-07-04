@@ -202,7 +202,6 @@ const Skills = () => {
     { id: 'security', label: 'Security' },
     { id: 'development', label: 'Development' },
     { id: 'tools', label: 'Tools & Platforms' },
-    { id: 'certifications', label: 'Certifications' }
   ];
   
   const skills = [
@@ -241,13 +240,7 @@ const Skills = () => {
     { name: 'Linux', icon: '🐧', category: 'tools', level: 5 },
     { name: 'Git', icon: '📊', category: 'tools', level: 5 },
     { name: 'OWASP ZAP', icon: '🕸️', category: 'tools', level: 4 },
-    
-    // Certifications
-    { name: 'OSCP', icon: '🎓', category: 'certifications', level: 5 },
-    { name: 'CEH', icon: '🎓', category: 'certifications', level: 5 },
-    { name: 'CISSP', icon: '🎓', category: 'certifications', level: 4 },
-    { name: 'CompTIA Security+', icon: '🎓', category: 'certifications', level: 5 },
-    { name: 'AWS Security', icon: '🎓', category: 'certifications', level: 4 }
+  
   ];
   
   // Filter skills based on selected category

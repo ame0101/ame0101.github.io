@@ -208,36 +208,38 @@ const Tab = styled.button`
     color: ${props => props.theme.colors.text};
   }
 `;
-
 // Experience data for the timeline
 const experience = [
   {
     title: "Software Engineer (Security Focus)",
     company: "Boston University",
-    period: "Jun 2023 - Present",
-    description: "Security-focused software engineer working on secure system design and implementation.",
+    period: "Jun 2023 – Present",
+    description:
+      "Security-focused software engineer working on zero-trust architecture and secure system design.",
     responsibilities: [
-      "Engineered a secure employee records system (MongoDB/Node.js), slashing data retrieval latency by 35% via query optimization and indexing",
-      "Enforced zero breaches over 12 months through AES-256 encryption and granular RBAC for salary/position data",
-      "Modernized legacy systems via Docker microservices, reducing deployment downtime by 60%",
-      "Implemented AI-driven security monitoring and anomaly detection systems",
-      "Collaborated with development teams to integrate security into CI/CD pipelines"
+      "Engineered a secure employee-records system (MongoDB/Node.js), cutting query latency 35 % via indexing",
+      "Maintained zero data breaches for 12 months through AES-256 encryption and granular RBAC",
+      "Modernized legacy services into Docker micro-services, shrinking deployment downtime 60 %",
+      "Embedded AI-driven anomaly detection into the CI/CD pipeline for continuous monitoring",
+      "Coached dev teams on threat modeling and secure-coding best practices"
     ]
   },
   {
-    title: "Freelance Full-Stack Engineer",
-    company: "Remote",
-    period: "Jan 2022 - Present",
-    description: "Full-stack developer specializing in secure application development and optimization.",
+    title: "Full-Stack Engineer",
+    company: "Independent Projects",
+    period: "Jan 2022 – Present",
+    description:
+      "Delivering production-grade SaaS applications with built-in security and performance guarantees.",
     responsibilities: [
-      "Delivered 15+ full-stack apps (React/Node.js) with 98% client satisfaction; secured auth via OAuth2/SAML",
-      "Boosted SaaS platform retention by 25% via responsive redesigns and Lighthouse-optimized performance (90+ scores)",
-      "Implemented secure coding practices and vulnerability assessments in client projects",
-      "Developed custom security tools for monitoring and threat detection",
-      "Provided security consulting and recommendations for client infrastructure"
+      "Shipped 15 + React/Node platforms, each hardened with OAuth2 and SAML single-sign-on",
+      "Lifted customer retention 25 % via responsive redesigns and Lighthouse 90 + performance scores",
+      "Integrated static-analysis gates and SCA scans into GitHub Actions for zero critical CVEs",
+      "Built observability stacks (Prometheus / Grafana) to surface anomalies in real time",
+      "Cut cloud spend up to 30 % through right-sizing, autoscaling, and infra-as-code reviews"
     ]
   }
 ];
+
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('profile');
@@ -276,35 +278,36 @@ const About = () => {
   ]
 }`
     },
-    {
-      name: 'experience.json',
-      content: `[
+   {
+  name: 'experience.json',
+  content: `[
   {
     "title": "Software Engineer (Security Focus)",
     "company": "Boston University",
     "period": "Jun 2023 - Present",
-    "description": "Security-focused software engineering role developing and maintaining secure enterprise systems.",
+    "description": "Security-focused software engineering role developing and maintaining zero-trust enterprise systems.",
     "responsibilities": [
-      "Engineered a secure employee records system (MongoDB/Node.js), slashing data retrieval latency by 35% via query optimization and indexing",
-      "Enforced zero breaches over 12 months through AES-256 encryption and granular RBAC for salary/position data",
-      "Modernized legacy systems via Docker microservices, reducing deployment downtime by 60%",
-      "Architected a zero-trust employee records system with TLS 1.3 and MongoDB encrypted-at-rest",
-      "Cut data exfiltration risks by 40% through HTTPS traffic inspection (Wireshark/Nmap) and microservice isolation"
+      "Engineered a secure employee-records system (MongoDB/Node.js), cutting query latency 35%",
+      "Enforced zero breaches over 12 months via AES-256 encryption and granular RBAC",
+      "Modernized legacy services into Docker micro-services, shrinking deployment downtime 60%",
+      "Architected a zero-trust mesh with TLS 1.3 and encrypted-at-rest MongoDB clusters",
+      "Reduced data-exfiltration risk 40% through HTTPS inspection and micro-segmentation"
     ],
     "technologies": ["MongoDB", "Node.js", "AES-256", "RBAC", "Docker", "Wireshark", "Nmap", "TLS 1.3"]
   },
   {
-    "title": "Freelance Full-Stack Engineer",
-    "company": "Remote",
+    "title": "Full-Stack Engineer",
+    "company": "Independent Projects",
     "period": "Jan 2022 - Present",
-    "description": "Independent full-stack development focusing on secure, performant web applications.",
+    "description": "Building secure, performant SaaS solutions end-to-end.",
     "responsibilities": [
-      "Delivered 15+ full-stack apps (React/Node.js) with 98% client satisfaction; secured auth via OAuth2/SAML",
-      "Boosted SaaS platform retention by 25% via responsive redesigns and Lighthouse-optimized performance (90+ scores)",
-      "Implemented secure authentication and authorization mechanisms for client applications",
-      "Developed and deployed scalable, secure web solutions for diverse client requirements"
+      "Shipped 15+ React/Node SaaS apps, all secured with OAuth2 & SAML SSO",
+      "Raised customer retention 25% through responsive UIs and Lighthouse 90+ scores",
+      "Embedded static analysis and SCA into CI for zero critical CVEs",
+      "Implemented observability with Prometheus/Grafana for real-time anomaly alerts",
+      "Optimized cloud spend up to 30% by rightsizing and autoscaling resources"
     ],
-    "technologies": ["React", "Node.js", "OAuth2", "SAML", "JavaScript", "Responsive Design", "Performance Optimization"]
+    "technologies": ["React", "Node.js", "OAuth2", "SAML", "TypeScript", "Grafana", "Prometheus"]
   }
 ]`
     },
